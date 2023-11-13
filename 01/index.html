@@ -64,7 +64,8 @@
 
 <script>
     //task 1
-    
+    //напишіть калькуляцію, яка з вхідних даних обчислює результат
+
     // const catLiquidFoodPrice = +prompt("How much does cat food cost?", "5");
     // const catLiquidFoodMonthCount = +prompt("How much feed do you need for a month?", "40");
     //
@@ -76,6 +77,8 @@
 
 
     //task 2
+    //Зробіть форму логіна та пароля, яка по кнопці login буде порівнювати логін та пароль з асоціативним масивом
+    //і відображати у випадку успіху зелений div з привітанням або червоний div з текстом помилки.
     const credentials = {
         login: 'admin',
         password: 'qwerty',
@@ -89,9 +92,9 @@
 
 
         if(userName === credentials.login && password === credentials.password ){
-            alert(`${userName.charAt(0).toUpperCase() + userName.slice(1)}, ласкаво просимо!`);
+            document.write(`<div style="background:green;"> ${userName.charAt(0).toUpperCase() + userName.slice(1)}, ласкаво просимо!</div>`);
         }else {
-            alert("Такого користувача не має в системі");
+            document.write(`<div style="background:red;">Такого користувача не має в системі</div>`);
         }
 
     });
