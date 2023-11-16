@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+<script>
+    //Task 1
+    // Number: age
+    // За допомогою prompt запитати у користувача його вік та підрахувати рік народження. Рік народження вивести за допомогою alert.
+
+    // let age = +prompt("How old are you?");
+    // alert(`You were born in ${2023 - age}.`);
+
+
+    //Task 2
+    //     Number: temperature
+    // За допомогою prompt запитати у користувача температуру в градусах Цельсія та перевести їх у Фаренгейти та/або навпаки.
+
+    // let temperature = +prompt("What is the temperature in degrees celsius now");
+    // alert(`Temperature is ${(temperature * 1.8) + 32 }°F now!`);
+
+
+    //Task 3
+    //     Number: divide
+    // Зробіть калькулятор для розрахунку поділу націло двох чисел. Використовуйте Math.floor або альтернативи.
+
+    // let num_a = +prompt("Enter first number");
+    // let num_b = +prompt("Enter second number");
+    // alert(`${num_a} divide ${num_b} is ${Math.floor(num_a/num_b)}`);
+
+
+    //Task 4
+    //     Number: currency
+    // Напишіть код, який обчислює обмін валют за курсом, заданим за допомогою константи const rate = КУРС ВАЛЮТИ Вважайте значення в одній валюті за допомогою 'prompt',
+    //     після чого помножіть/поділіть це число на 'rate'. Виведіть результат, використовуючи alert. Обмежте кількість знаків після коми двома (нас не хвилюють дрібні частини центів/копійок)
+
+    // const rate = 36;
+    // let currency = +prompt("How much $ do you want to exchange?");
+    // alert(`You will receive ${(currency * rate).toFixed(2)}₴.`);
+
+    //Task 5
+    // Number: RGB
+    // За допомогою prompt організуйте введення трьох констант red, green, blue у десятковій системі. Створіть із них CSS-колір у форматі #RRGGBB використовуючи шістнадцяткову систему числення.
+    //     Значення менше 16ти поки що можна не враховувати.
+
+    // const red = +prompt("Enter red value", "0-255") || "00";
+    // const green = +prompt("Enter green value", "0-255") || "00";
+    // const blue = +prompt("Enter blue value", "0-255") || "00";
+    //
+    // alert(`Hex color: #${red.toString(16)}${green.toString(16)}${blue.toString(16)}`);
+
+
+    //Task 6
+    //     Number: flats
+    // Зробіть калькулятор, який дозволить вам виходячи з інформації про кількість поверхів у будинку та кількість квартир на поверсі знаходити під'їзд та поверх певної квартири за її номером. ' +
+    // 'Наприклад для 9поверхового будинку по 4 квартири на поверх 81 квартира знаходиться на 3-му поверсі третього під'їзду. Користувач повинен вводити за допомогою prompt кiлькiсть поверхiв,
+    //     кiлькiсть квартир на поверсi та номер квартири. Код повинен видавати пiд'їзд та поверх по номеру квартири.
+
+    
+    const numberOfFloors = parseInt(prompt("Enter the number of floors in the building:"));
+    const roomsPerFloor = parseInt(prompt("Enter the number of apartments per floor:"));
+    const room = parseInt(prompt("Enter the apartment number:"));
+    const totalEntrances = Math.ceil(room / (roomsPerFloor * numberOfFloors));
+    let currentFloor = Math.ceil((room % (roomsPerFloor * numberOfFloors)) / roomsPerFloor);
+
+        if (currentFloor === 0) {
+            currentFloor = numberOfFloors;
+            alert("Entrance: " + totalEntrances + ", Floor: " + currentFloor);
+        }else {
+            alert("Entrance: " + totalEntrances + ", Floor: " + currentFloor);
+        }
+
+
+</script>
+</body>
+</html>
