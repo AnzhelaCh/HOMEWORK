@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+<script>
+    //Task 1
+    // Number: odd
+    // За допомогою prompt дізнайтесь число, введене користувачем. За допомогою if перевірте, чи число коректно перетворено з рядка.
+    //     У разі помилки виведіть повідомлення Виведіть парне число чи ні, використовуючи if.
+
+    function odd(){
+        const number = +prompt("Enter number");
+
+        if(number){
+            if(number % 2 === 0){
+                console.log(`You entered even ${number} number.`);
+            }else {
+                console.log("Please, enter even number.");
+            }
+        }else {
+            console.log("Please, enter number.");
+        }
+
+    }
+
+    //odd();
+
+    //Task 2
+    // String: lexics
+    // Запитайте у користувача текст і перевірте його на наявність некоректного слова або кількох некоректних слів. Використовуйте метод indexOf (або includes) рядки:
+
+    function lexics(){
+        const text = prompt("Write a text");
+        const word = prompt("Write some word");
+        if(text.includes(word)){
+        console.log(`There is ${word} in the "text".`);
+        }else {
+            console.log(`There isn't ${word} in the "text".`);
+        }
+    }
+    //lexics();
+
+
+    //Task 3
+    // Boolean
+    // Напишіть код, який запитує ті чи інші питання з відповіддю "так"/"ні" за допомогою confirm, і зберігає відповіді в змінних.
+
+    function boolean(){
+        const name = confirm("Are you adult?") && "Yes" || "No";
+        const location = confirm("Do you like cats?") && "Yes" || "No";
+
+        console.log(`${name}, ${location}`);
+
+    }
+    //boolean();
+
+    //Task 4
+    // Boolean: if
+    //     Розширте попереднє завдання умовами за отриманими змінними умовами (if-else). Наприклад, якщо ви питаєте стать користувача з допомогою confirm,
+    //     то за умовою зробіть alert("Ви жінка") та alert("Ви чоловік")
+
+    function booleanIf(){
+        const gender = confirm("Are you male?");
+
+        if(gender){
+            alert("Ви чоловік");
+        }else {
+            alert("Ви жінка");
+        }
+
+    }
+    //booleanIf();
+
+    //Task 5
+    // Comparison: sizes
+    // Зробіть переклад переклад з нашої системи розмірів до американської чи будь-якої на вибір. Використовуйте prompt, умови порівняння та alert.
+
+    function sizes(){
+        function outerwear(){
+            const uaSize = +prompt("Write ukrainian size", "40,42,46,50,54");
+            if(uaSize === 40){
+                alert(`S`);
+            }else if(uaSize === 42){
+                alert(`M`);
+            }else if(uaSize === 46){
+                alert(`L`);
+            }else if(uaSize === 50){
+                alert(`XL`);
+            }else if(uaSize === 54){
+                alert(`XXL`);
+            }
+
+        }
+
+        function lingerie(){
+            const uaSize = +prompt("Write ukrainian size", "40,42,46,50,54");
+            if(uaSize === 42){
+                alert(`8`);
+            }else if(uaSize === 46){
+                alert(`12`);
+            }else if(uaSize === 50){
+                alert(`16`);
+            }else if(uaSize === 54){
+                alert(`20`);
+            }
+        }
+
+        function socks(){
+            const uaSize = +prompt("Write ukrainian size", "21,23,25,27");
+            if(uaSize === 21){
+                alert(`8`);
+            }else if(uaSize === 23){
+                alert(`9`);
+            }else if(uaSize === 25){
+                alert(`10`);
+            }else if(uaSize === 27){
+                alert(`11`);
+            }
+        }
+
+        if(confirm("Are you interested in outerwear?")){
+            outerwear();
+        }else if(confirm("Are you interested in lingerie?")){
+            lingerie();
+        }else if(confirm("Are you interested in socks?")){
+            socks();
+        }
+
+    }
+   // sizes();
+
+
+
+    //Task 6
+    // Ternary
+    // Запитайте у користувача стать (confirm). Виведіть за допомогою alert "Ви чоловік" або "Ви жінка". Використовуйте тернарний оператор.
+
+    function ternary(){
+        const gender = confirm("Are you male?") ? "Ви чоловік" : "Ви жінка";
+        alert(gender);
+
+    }
+   // ternary();
+
+    //Task 7
+    // Prompt: or
+    // Для завдання Number: age використовуючи АБО || вивести повідомлення про помилку (alert) якщо користувач не введе вік або натисне скасування
+    // (тобто prompt видасть порожній рядок або null, що інтерпретується як false).
+
+    function promptOr(){
+            const number = +prompt("Write your age") || alert(`Incorrect data! Please, write your age.`) ;
+            if(number >= 18){
+                alert("Welcome!");
+            }else {
+                alert("Bro/sis, go to school!");
+            }
+    }
+   // promptOr();
+
+
+    //Task 8
+    // Confirm: or this days
+    // За допомогою цього ж трюку (використання АБО для запуску альтернативи) зробіть примхливого робота,
+    //     який у confirm запитує "шопінг?", а у разі відмови - виводити alert "ти - бяка".
+
+    function confirmDays(){
+        confirm("шопінг?") || alert("ти - бяка");
+    }
+   // confirmDays();
+
+    //Task 9
+    // Confirm: if this days
+    // Зробити те саме за допомогою if.
+
+    function confirmDaysIf(){
+       const answer =  confirm("шопінг?");
+       if(answer){
+           alert("Let's go!");
+       }else {
+           alert("ти - бяка")
+       }
+    }
+   // confirmDaysIf();
+
+
+    //Task 10
+    // Default: or
+    // Попросіть користувача ввести ПІБ в три різні змінні. Використовуючи АБО || додайте рядки за промовчанням,
+    //     які будуть зберігатися у внутрішніх змінних якщо користувач ввів порожній рядок або натиснув "Скасувати".
+    //     Наприклад, якщо ви на кроці введення прізвища натиснете Escape, прізвище буде "Іванов"
+
+    function defaultOr(){
+        const firstName = prompt("What is your first name?") || "Іванов";
+        const name = prompt("What is your name?") || "Іван";
+        const lastName = prompt("What is your last name?") || "Іванович";
+
+        alert(`Hello, ${firstName} ${name} ${lastName}!`);
+
+    }
+   // defaultOr();
+
+    //Task 11
+    // Default: if
+    //     Зробіть те саме за допомогою if та else
+
+    function defaultIf(){
+        let firstName = prompt("What is your first name?");
+        let name = prompt("What is your name?");
+        let lastName = prompt("What is your last name?");
+
+
+        if(!firstName){
+            firstName = "Іванов";
+        }
+        if(!name){
+            name = "Іван";
+        }
+        if(!lastName){
+            lastName = "Іванович";
+        }
+
+        alert(`Hello, ${firstName} ${name} ${lastName}!`);
+
+    }
+   // defaultIf();
+
+    //Task 12
+    // Login and password
+    // Напишіть код, який запитує логін, перевіряє його на вірність, якщо логін вірний, просить ввести пароль і перевіряє його.
+    //     В разі розбіжності логіну чи пароля виводити alert з текстом помилки. У разі успішного логіну – alert з привітанням.
+    //     Правильні логін: admin та пароль: qwerty. Використовуйте вкладені if та else.
+
+    function logPass(){
+        const login = prompt("Login");
+
+        if(login.trim() === "admin"){
+            const password = prompt("Password");
+            if(password.trim() === "qwerty" ){
+                alert("Welcome!");
+            }else {
+                alert("Incorrect password");
+            }
+        }else {
+            alert("Incorrect login");
+        }
+
+    }
+   // logPass();
+
+    //Task 13
+    // Currency exchange
+    // Попросіть користувача ввести валюту (наприклад, usd, eur, інші валюти додати до смаку) за допомогою prompt.
+    //     Також поцікавтеся купити чи продати він бажає (використовуйте confirm).
+    // За допомогою декількох if та тернарного оператора всередині кожного з if задайте змінну rate, визначальну курс конкретної валюти на купівлю чи продаж.
+    // Зверніть увагу на місце оголошення змінної rate - вона має бути доступна в коді після всіх цих if.
+    // Попросіть користувача ввести суму на обмін
+    // Порахуйте та виведіть результат шляхом множення або поділу на rate
+    // Дайте можливість користувачеві вводити назви валют у будь-якому регістрі (UsD, eUR). Для цього в if використовуйте toUpperCase (або toLowerCase)
+
+
+    function currency(){
+        let rate;
+
+        const currency = prompt("Write currency", "USD, EUR, GBP");
+        const buySell = confirm("Do you want to buy currency?") && "buy" || "sell";
+
+        if(currency.toUpperCase() === "USD"){
+            rate = 37.60;
+        }else if(currency.toUpperCase() === "EUR"){
+            rate = 40;
+        }else if(currency.toUpperCase() === "GBP"){
+            rate = 45;
+        }
+
+        if(buySell === "buy"){
+            const amount = +prompt("How mush you want to buy?") || 0;
+            alert(`Give ${ amount * rate } UAH, please`);
+        }else {
+            const amount = +prompt("How mush you want to sell?") || 0;
+            const result = (amount / rate).toFixed(2);
+            alert(`You will receive ${ result } ${currency}.`);
+        }
+
+    }
+   // currency();
+
+
+    //Task 14
+    // Scissors
+    // Зробіть гру "камінь-ножиці-папір". Користувач вводить свій варіант через prompt, програма генерує свій варіант через Math.random()
+    // і виводить через alert. Наступний alert виводить ім'я переможця чи "нічия"
+
+    function scissors(){
+        const customerAnswer = prompt("Камінь-ножиці-папір?");
+        let comp;
+        let winner;
+
+        if(Math.random() < 0.5 ){
+            comp = "камінь";
+        }else if(Math.random() >= 0.5 && Math.random() < 0.7 ){
+            comp = "ножиці";
+        }else {
+            comp = "папір";
+        }
+
+        if(customerAnswer.toLowerCase() === "камінь" && comp === "ножиці"){
+            winner = "Ти виграв!";
+        }else if(customerAnswer.toLowerCase() === "камінь" && comp === "папір"){
+            winner = "Комп'ютер виграв!";
+        }
+        else if(customerAnswer.toLowerCase() === "ножиці" && comp === "камінь"){
+            winner = "Комп'ютер виграв!";
+        }
+        else if(customerAnswer.toLowerCase() === "ножиці" && comp === "папір"){
+            winner = "Ти виграв!";
+        }
+        else{
+            winner = "нічия!";
+        }
+        alert(comp);
+        alert(winner);
+
+    }
+   // scissors();
+
+    //Task 15
+    // Додаткове завдання
+    // Зліпити всі завдання в один текст, таким чином, щоб спочатку відбувалося введення назви завдання, а потім за допомогою if запускався код конкретного завдання
+
+    function task(task){
+        if(task === "scissors"){
+            scissors();
+        }else if(task === "currency"){
+            currency();
+        }else if(task === "logPass"){
+            logPass();
+        }else if(task === "defaultIf"){
+            defaultIf();
+        }else if(task === "defaultOr"){
+            defaultOr();
+        }else if(task === "confirmDaysIf"){
+            confirmDaysIf();
+        }else if(task === "confirmDays"){
+            confirmDays();
+        }else if(task === "promptOr"){
+            promptOr();
+        }else if(task === "ternary"){
+            ternary();
+        }else if(task === "sizes"){
+            sizes();
+        }else if(task === "booleanIf"){
+            booleanIf();
+        }else if(task === "boolean"){
+            boolean();
+        }else if(task === "lexics"){
+            lexics();
+        }else if(task === "odd"){
+            odd();
+        }
+
+    }
+    task(prompt("What task to start? Choice one of: scissors, currency, logPass, defaultIf, defaultOr, confirmDaysIf, confirmDays, promptOr, ternary, sizes, booleanIf, boolean, lexics, odd"));
+</script>
+</body>
+</html>
